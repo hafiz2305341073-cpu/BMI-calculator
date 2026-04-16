@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card" aria-labelledby="bmi-title">
+      <h1 id="bmi-title">BMI Calculator</h1>
+      <p class="subtitle">Check your body mass index using kilograms and inches.</p>
+
+      <form id="bmi-form" novalidate>
+        <div class="input-grid">
+          <label for="weight" id="weight-label">Weight (kg)</label>
+          <input id="weight" name="weight" type="number" min="1" step="0.1" placeholder="e.g. 68" required />
+
+          <label for="height" id="height-label">Height (in)</label>
+          <input id="height" name="height" type="number" min="1" step="0.1" placeholder="e.g. 68" required />
+        </div>
+
+        <button type="submit">Calculate BMI</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <p class="value-line">Your BMI: <strong id="bmi-value">-</strong></p>
+        <p class="category-line">Category: <span id="bmi-category">-</span></p>
+      </section>
+
+      <p id="error-message" class="error" role="alert" hidden></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
